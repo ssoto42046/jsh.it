@@ -1,0 +1,67 @@
+body {
+  background-color: #557386;
+  font-family: 'Arvo', serif;
+  color: white;
+}
+
+#h1 {
+  text-align: center;
+  font-size: 100px;
+  color: white;
+}
+
+#twitter {
+  position: absolute;
+  left: 100px;
+  bottom: 230px;
+}
+
+/*#facebook {
+  position: absolute;
+  left: 400px;
+  bottom: 230px;
+}
+
+#pinterest {
+  position: absolute;
+  left: 600px;
+  bottom: 250px;
+}
+
+#youtube {
+  position: absolute;
+  left: 1080px;
+  bottom: 240px;
+}*/
+
+
+
+.btnExample {
+  color: black;
+  background-color: white;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  /*border: 3px solid #172E3D;*/
+  display: inline-block;
+  
+}
+
+.btnExample:hover {
+  color: white;
+  background-color: gray;
+  cursor: pointer;
+}
+
+iframe {
+  position: absolute;
+  left: 175px;
+  bottom: 180px;
+}
+
+.pics {
+  display: inline-block;
+  align-content: center;
+  margin: 0 auto;
+  /*position: absolute;*/
+}

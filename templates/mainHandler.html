@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel='stylesheet' type="text/css" href="static/mainHandler.css">
+    <!-- linking the mainHandler.css -->
+    <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+    <!-- font change -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- source code for twitter -->
+    <script src ="static/mainHandler.js"></script>
+    <!-- linking the mainHandler.js -->
+  </head>
+
+  <body>
+    <button align=center type="button" onclick="location.href='/signOutHandler'" class="btnExample"
+     value="sign out" id="signout">sign out</button>
+
+    <h1 id=h1>post.it</h1>
+
+    <div align=center>
+      <img class="pics" src="static/twitter.jpg" alt="twitter icon" width="220" height="220">
+      <!-- <img id=facebook src="static/facebook.jpg" alt="facebook icon" width="200" height="200"> -->
+      <img class="pics" src="static/youtube.jpg" alt="youtube icon" width="200" height="200">
+      <img class="pics" src="static/pinterest.jpg" alt="pinterest icon" width="200" height="200">
+    </div align=center>
+
+    <iframe
+      src="https://platform.twitter.com/widgets/tweet_button.html?size=l&related=twitterapi%2Ctwitter&text=Post%20it%20here!"
+      width="140"
+      height="28"
+      title="Twitter Tweet Button"
+      style="border: 0; overflow: hidden;">
+    </iframe>
+  </body>
+</html>
