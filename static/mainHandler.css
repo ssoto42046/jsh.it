@@ -34,6 +34,13 @@ body {
   /*position: absolute;*/
 }
 
+#twitter{
+    /*height: 40%;*/
+    width: 60%;
+    align-content: center;
+    margin: 0 auto;
+}
+
 /*#twitter {
   position: absolute;
   left: 100px;
