@@ -13,11 +13,13 @@
   </head>
 
   <body>
+    <!-- This button refers to the signout button on the top right of the page -->
     <button align=center type="button" onclick="location.href='/signOutHandler'" class="btnExample"
      value="sign out" id="signout">sign out</button>
 
     <h1 id=h1>post.it</h1>
 
+<!-- This section is the center social media photos -->
     <div align=center>
       <img class="pics" src="static/twitter.jpg" alt="twitter icon" width="220" height="220">
       <!-- <img id=facebook src="static/facebook.jpg" alt="facebook icon" width="200" height="200"> -->
@@ -25,6 +27,7 @@
       <img class="pics" src="static/pinterest.jpg" alt="pinterest icon" width="200" height="200">
     </div align=center>
 
+<!-- This iframe allows the user to post to twitter -->
     <iframe
       src="https://platform.twitter.com/widgets/tweet_button.html?size=l&related=twitterapi%2Ctwitter&text=Post%20it%20here!"
       width="140"
@@ -32,5 +35,21 @@
       title="Twitter Tweet Button"
       style="border: 0; overflow: hidden;">
     </iframe>
+
+  <!-- This is the entire pintrest html file...to pin stuff from page -->
+      <script
+          type="text/javascript"
+          async defer
+          // src="https://assets.pinterest.com/js/pinit.js">
+      </script>
+
+      <a href="https://www.pinterest.com/pin/create/button/"
+      width="140"
+      height="28"
+      title="Twitter Tweet Button"
+      style="border: 0; overflow: hidden;">
+        <img src="https://assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png"/>
+    </a>
+
   </body>
 </html>
