@@ -18,14 +18,10 @@ class signIn(webapp2.RequestHandler):
             #       (user.nickname(), users.create_logout_url('/')))
 
         template = env.get_template('mainHandler.html')
-        if user:
+        if user:  # If the user exists.
             self.response.out.write(template.render())
-            #after the user logs in, the website will be redirected to the
-            #mainHandler page (which has all the options and etc.) there will
-            #also be a 'signout' option which will redirect to the 'signin' page
         else:
             template = env.get_template('signIn.html')
-
             greeting = ('<button class="btnExample" align=center><a href="%s">Sign in</a></button>' % users.create_login_url('/'))
             self.response.out.write('<html><body>%s</body></html>' % greeting)
             self.response.out.write(template.render())
@@ -46,10 +42,9 @@ class signOutHandler(webapp2.RequestHandler):
         self.redirect(signouturl)
         #self.response.out.write('<html><body>%s</body></html>' % greeting)
 
-
 app = webapp2.WSGIApplication([
     ('/', signIn),
     #('/mainHandler', mainHandler),
-    ('/signOutHandler', signOutHandler)
+    ('/signOutHandler', signOutHandler),
 
 ], debug=True)

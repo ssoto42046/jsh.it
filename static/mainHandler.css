@@ -18,7 +18,12 @@ body {
   top: 5px;
   /*border: 3px solid #172E3D;*/
   display: inline-block;
+}
 
+table, th {
+   border: 1px solid black;
+   text-align: center;
+   border-spacing: 10px;
 }
 
 .btnExample:hover {
