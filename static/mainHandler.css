@@ -1,4 +1,4 @@
-body {
+body, h3 {
   background-color: #34495e;
   font-family: 'Arvo', serif;
   color: white;
@@ -21,7 +21,7 @@ body {
 }
 
 table, th {
-   border: 1px solid black;
+   border: 0px solid black;
    text-align: center;
    border-spacing: 10px;
 }

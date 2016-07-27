@@ -42,9 +42,49 @@ class signOutHandler(webapp2.RequestHandler):
         self.redirect(signouturl)
         #self.response.out.write('<html><body>%s</body></html>' % greeting)
 
+class twitterHandler(webapp2.RequestHandler):
+    def get(self):
+        main_template = env.get_template('twitter.html')
+        self.response.out.write(main_template.render())
+    def post(self):
+        main_template = env.get_template('twitterResult.html')
+        template_variables = {
+            'TwitterLink':self.request.get("TwitterLink"),
+            }
+        if template_variables['TwitterLink'] != "":
+            template_variables['TwitterLink'] = template_variables['TwitterLink'][20:]
+            print template_variables['TwitterLink']
+            url = ('<a class="twitter-timeline" href="https://twitter.com/%s"></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>' % template_variables['TwitterLink'])
+            print url
+            self.response.out.write(url)
+        else:
+            self.redirect("/")
+        self.response.out.write(main_template.render(template_variables))
+
+class youtubeHandler(webapp2.RequestHandler):
+    def get(self):
+        main_template = env.get_template('youtube.html')
+        self.response.out.write(main_template.render())
+    def post(self):
+        main_template = env.get_template('result.html')
+        template_variables = {
+            'YoutubeLink':self.request.get("YoutubeLink"),
+            }
+        if template_variables['YoutubeLink'] != "":
+            indexofequal = template_variables['YoutubeLink'].index('=')
+            template_variables['YoutubeLink'] = template_variables['YoutubeLink'][indexofequal+1:]
+            # print template_variables['YoutubeLink']
+            url = ('<iframe width="420" height="315" src="https://www.youtube.com/embed/%s" frameborder="0" allowfullscreen></iframe>' % template_variables['YoutubeLink'])
+            self.response.out.write(url)
+        else:
+            self.redirect("/")
+        self.response.out.write(main_template.render(template_variables))
+
 app = webapp2.WSGIApplication([
     ('/', signIn),
     #('/mainHandler', mainHandler),
     ('/signOutHandler', signOutHandler),
+    ('/Twitter', twitterHandler),
+    ('/Youtube', youtubeHandler)
 
 ], debug=True)
