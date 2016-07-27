@@ -46,6 +46,14 @@ table, th {
     margin: 0 auto;
 }
 
+table {
+    table-layout: fixed;
+}
+
+td {
+  width: 33%
+}
+
 /*#twitter {
   position: absolute;
   left: 100px;
