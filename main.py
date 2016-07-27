@@ -80,11 +80,31 @@ class youtubeHandler(webapp2.RequestHandler):
             self.redirect("/")
         self.response.out.write(main_template.render(template_variables))
 
+class pinterestHandler(webapp2.RequestHandler):
+    def get(self):
+        main_template = env.get_template('pinterest.html')
+        self.response.out.write(main_template.render())
+    def post(self):
+        main_template = env.get_template('pinterestResult.html')
+        template_variables = {
+            'PinterestLink':self.request.get("PinterestLink"),
+            }
+        if template_variables['PinterestLink'] != "":
+            # template_variables['TwitterLink'] = template_variables['TwitterLink'][20:]
+            # print template_variables['TwitterLink']
+            url = ('<a data-pin-do="embedUser" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="80" href="%s"></a>' % template_variables['PinterestLink'])
+            print url
+            self.response.out.write(url)
+        else:
+            self.redirect("/")
+        self.response.out.write(main_template.render(template_variables))
+
 app = webapp2.WSGIApplication([
     ('/', signIn),
     #('/mainHandler', mainHandler),
     ('/signOutHandler', signOutHandler),
     ('/Twitter', twitterHandler),
-    ('/Youtube', youtubeHandler)
+    ('/Youtube', youtubeHandler),
+    ('/Pinterest', pinterestHandler)
 
 ], debug=True)
