@@ -8,7 +8,12 @@
 <html>
   <body>
       <form method="post" action ="">
-         <h3>Enter a Youtube Link: <input type="text" name="YoutubeLink"/></h3>
+         <h3>Enter a Youtube Link : <input type="text" name="YoutubeLink" placeholder="https://www.youtube.com/watch?v=gJLIiF15wjQ"/></h3>
+         <input type=hidden name="position" value={{position}}/>
          <p><input type="submit" value="Submit"></p>
+       </form>
+       {% for url in urls %}
+          {{url.link}}
+       {% endfor %}
   </body>
 </html>

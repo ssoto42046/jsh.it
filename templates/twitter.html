@@ -8,7 +8,12 @@
 <html>
   <body>
       <form method="post" action ="">
-         <h3>Enter a Twitter Link: <input type="text" name="TwitterLink"/></h3>
+         <h3>Enter a Twitter Link : <input type="text" name="TwitterLink" placeholder="http://twitter.com/taylorswift13"/></h3>
+         <input type=hidden name="position" value={{position}}/>
          <p><input type="submit" value="Submit"></p>
+       </form>
+       {% for url in urls %}
+          {{url.link}}
+       {% endfor %}
   </body>
 </html>

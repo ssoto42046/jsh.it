@@ -54,35 +54,15 @@ td {
   width: 33%
 }
 
-/*#twitter {
-  position: absolute;
-  left: 100px;
-  bottom: 230px;
-}*/
-
-/*#facebook {
-  position: absolute;
-  left: 400px;
-  bottom: 230px;
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: grey;
 }
-
-#pinterest {
-  position: absolute;
-  left: 600px;
-  bottom: 250px;
+::-moz-placeholder { /* Firefox 19+ */
+  color: grey;
 }
-
-#youtube {
-  position: absolute;
-  left: 1080px;
-  bottom: 240px;
-}*/
-
-/*iframe {
-  position: absolute;
-  left: 175px;
-  bottom: 180px;
-  display: inline-block;
-  align-items: center;
-  margin: 0 auto;
-}*/
+:-ms-input-placeholder { /* IE 10+ */
+  color: grey;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: grey;
+}

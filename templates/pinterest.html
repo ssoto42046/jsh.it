@@ -8,8 +8,13 @@
 <html>
   <body>
       <form method="post" action ="">
-         <h3>Enter a Pinterest Board Link: <input type="text" name="PinterestLink"/></h3>
+         <h3>Enter a Pinterest Board Link : <input id="placeholder"  type="text" name="PinterestLink" placeholder="https://www.pinterest.com/bonappetitmag/appetizers-party-food/"/></h3>
+         <input type=hidden name="position" value={{position}}/>
          <p><input type="submit" value="Submit"></p>
          <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+       </form>
+       {% for url in urls %}
+          {{url.link}}
+       {% endfor %}
   </body>
 </html>
