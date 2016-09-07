@@ -64,7 +64,7 @@ class twitterHandler(webapp2.RequestHandler):
             self.render(pos, twitter_list)
             url.put()
         else:
-            self.redirect("/")
+            self.redirect("/Twitter")
 
     def fetchUrls(self, pos):
         user = users.get_current_user().nickname()
@@ -105,7 +105,7 @@ class youtubeHandler(webapp2.RequestHandler):
             self.render(pos, youtube_list)
             url.put()
         else:
-            self.redirect("/")
+            self.redirect("/Youtube")
 
     def fetchUrls(self, pos):
         user = users.get_current_user().nickname()
@@ -145,7 +145,7 @@ class pinterestHandler(webapp2.RequestHandler):
             self.render(pos, pinterest_list)
             url.put()
         else:
-            self.redirect("/")
+            self.redirect("/Pinterest")
 
     def fetchUrls(self, pos):
         user = users.get_current_user().nickname()
@@ -172,6 +172,10 @@ class aboutItHandler(webapp2.RequestHandler):
         main_template = env.get_template('aboutIt.html')
         self.response.out.write(main_template.render())
 
+class howToUseHandler(webapp2.RequestHandler):
+    def get(self):
+        main_template = env.get_template('howToUse.html')
+        self.response.out.write(main_template.render())
 
 app = webapp2.WSGIApplication([
     ('/', signIn),
@@ -180,6 +184,7 @@ app = webapp2.WSGIApplication([
     ('/Youtube', youtubeHandler),
     ('/Pinterest', pinterestHandler),
     ('/aboutUs', aboutUsHandler),
-    ('/aboutIt', aboutItHandler)
+    ('/aboutIt', aboutItHandler),
+    ('/howToUse', howToUseHandler),
 
 ], debug=True)

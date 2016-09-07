@@ -4,18 +4,31 @@ body, h3 {
   color: white;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 #h1 {
   text-align: center;
   font-size: 100px;
   color: white;
 }
 
+#button {
+  right: 10px;
+  top: 5px;
+}
+
+#buttonHowTo {
+  right: 75px;
+  top: 5px;
+}
+
 .btnExample {
   color: black;
   background-color: white;
   position: absolute;
-  right: 10px;
-  top: 5px;
   /*border: 3px solid #172E3D;*/
   display: inline-block;
 }
